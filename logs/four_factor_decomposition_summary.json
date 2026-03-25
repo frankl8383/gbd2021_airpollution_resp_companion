@@ -1,0 +1,30 @@
+{
+  "input_row_count": 57600,
+  "input_locations": [
+    "China",
+    "East Asia",
+    "Global",
+    "High SDI",
+    "Japan",
+    "Republic of Korea"
+  ],
+  "input_structural_zero_total_fill_rows": 6144,
+  "input_total_zero_rows": 12288,
+  "input_attributable_filled_zero_rows": 15360,
+  "input_paf_out_of_bounds_rows": 0,
+  "all_periods_by_sex_row_count": 648,
+  "main_both_row_count": 108,
+  "capped_row_count": 216,
+  "chain_row_count": 216,
+  "common_age_set_both_row_count": 216,
+  "max_abs_residual_main": 2.7939677238464355e-09,
+  "max_abs_residual_capped": 2.7939677238464355e-09,
+  "max_abs_residual_chain": 1.862645149230957e-09,
+  "max_abs_observed_identity_gap_main": 9.313225746154785e-10,
+  "max_abs_common_age_set_difference_main_both": 41374.79993534187,
+  "input_structural_zero_scope": [
+    "ozone::copd::deaths",
+    "pm25::copd::deaths"
+  ],
+  "note": "Both-sex rows use age-sex cells internally, so the structure component represents age-sex composition change in the combined population. Sex-specific rows represent within-sex age-structure change."
+}
