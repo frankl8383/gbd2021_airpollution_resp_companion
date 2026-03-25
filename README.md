@@ -19,11 +19,12 @@ submission-facing assets from the included current inputs.
 ## Recommended Release Assets
 
 The matched frozen artifacts for the current submission state are distributed as
-GitHub release assets:
+GitHub release assets and archived on Zenodo:
 
 - `BMC_submission_package_v16.zip`
 - `BMC_reproducibility_bundle_v14.zip`
 - Releases page: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases`
+- Archived Zenodo DOI: `https://doi.org/10.5281/zenodo.19222089`
 
 The same manuscript-companion content is also preserved directly in this public
 repository tree for audit and rebuild purposes.
@@ -39,7 +40,7 @@ repository tree for audit and rebuild purposes.
 
 - Project name: East Asia respiratory burden manuscript package
 - Project home page: this public manuscript-companion repository
-- Archived version: see the tagged GitHub release matching the submission state
+- Archived version: Zenodo DOI `10.5281/zenodo.19222089`
 - Operating system: Linux (validated on an Ubuntu-compatible server)
 - Programming language: Python 3
 - Other requirements: standard scientific Python environment with `pandas`,
