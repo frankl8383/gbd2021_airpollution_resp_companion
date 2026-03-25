@@ -12,7 +12,7 @@ submission-facing assets from the included current inputs.
 
 - Journal-facing route: `BMC Public Health`
 - Companion source commit in the private working repository:
-  `7025669d3ee93178d60b461a5628a5790b93e861`
+  `78f1a89c6d7e4626784275f6f8f1c66a3191f2eb`
 - This repository is not a full raw-data rerun archive.
 - Raw IHME/GBD downloads are not redistributed.
 
@@ -21,8 +21,9 @@ submission-facing assets from the included current inputs.
 The matched frozen artifacts for the current submission state are distributed as
 GitHub release assets:
 
-- `BMC_submission_package_v15.zip`
-- `BMC_reproducibility_bundle_v13.zip`
+- `BMC_submission_package_v16.zip`
+- `BMC_reproducibility_bundle_v14.zip`
+- Release URL: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases/tag/bmc-v16`
 
 The same manuscript-companion content is also preserved directly in this public
 repository tree for audit and rebuild purposes.
