@@ -1,16 +1,20 @@
 cff-version: 1.2.0
 title: "East Asia Respiratory Burden Manuscript Companion"
-message: "If you use this manuscript-companion repository, please cite the associated GitHub release and manuscript title."
+message: "If you use this manuscript-companion repository, please cite the archived GitHub or Zenodo release."
 type: software
+version: "bmc-v16.2"
 authors:
   - family-names: Liu
     given-names: Zihao
   - family-names: Li
     given-names: Bing
-repository-code: "https://github.com/frankl8383/gbd2021_airpollution_resp_companion"
-license: "LicenseRef-Manuscript-Companion-Notice"
 abstract: >
   Public manuscript-companion repository containing the source files,
   analysis-ready inputs, manuscript-facing tables and figures, QC outputs,
   and build scripts for the East Asia air pollution-attributable respiratory
   burden submission package.
+keywords:
+  - air pollution
+  - Global Burden of Disease
+  - East Asia
+  - respiratory burden

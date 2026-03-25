@@ -23,7 +23,7 @@ GitHub release assets:
 
 - `BMC_submission_package_v16.zip`
 - `BMC_reproducibility_bundle_v14.zip`
-- Release URL: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases/tag/bmc-v16`
+- Releases page: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases`
 
 The same manuscript-companion content is also preserved directly in this public
 repository tree for audit and rebuild purposes.
