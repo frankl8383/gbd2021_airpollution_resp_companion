@@ -24,6 +24,8 @@ OUTPUT_SUPP = PROJECT_ROOT / "outputs" / "supp"
 LOGS = PROJECT_ROOT / "logs"
 DOCS = PROJECT_ROOT / "docs"
 SUBMISSION_ROOT = PROJECT_ROOT / "submission_packages"
+PUBLIC_COMPANION_URL = "https://github.com/frankl8383/gbd2021_airpollution_resp_companion"
+ZENODO_DOI = "10.5281/zenodo.19222088"
 
 PACKAGE_SPECS = [
     {
@@ -33,14 +35,6 @@ PACKAGE_SPECS = [
         "current_repro_name": "BMC_reproducibility_bundle_current",
         "journal_name": "BMC Public Health",
         "cover_letter_source": WRITING / "cover_letter_bmc_v1.md",
-    },
-    {
-        "upload_prefix": "Archives_submission_package",
-        "repro_prefix": "Archives_reproducibility_bundle",
-        "current_upload_name": "Archives_submission_package_current",
-        "current_repro_name": "Archives_reproducibility_bundle_current",
-        "journal_name": "Archives of Public Health",
-        "cover_letter_source": WRITING / "cover_letter_archives_v1.md",
     },
 ]
 
@@ -593,8 +587,8 @@ It is not a full raw-data rerun archive. Raw IHME downloads are not redistribute
 ## Software Metadata
 
 - Project name: East Asia respiratory burden manuscript package
-- Project home page: Not applicable; this archived bundle accompanies the manuscript submission directly
-- Archived version: `{bundle_name}.zip`
+- Project home page: `{PUBLIC_COMPANION_URL}`
+- Archived version: Zenodo concept DOI `{ZENODO_DOI}` and journal-hosted `{bundle_name}.zip`
 - Operating system: Linux (validated on an Ubuntu-compatible server)
 - Programming language: Python 3
 - Other requirements: standard scientific Python environment with `pandas`, `matplotlib`, and `python-docx`
@@ -609,7 +603,7 @@ It is not a full raw-data rerun archive. Raw IHME downloads are not redistribute
 
 ## Scope Note
 
-Only the BMC route is journal-facing in this freeze. The retained Archives route is included solely for internal compatibility and should be ignored for submission or external audit of the BMC package.
+This freeze contains only the BMC route and is intended for journal submission and external audit of the BMC package.
 """
     (dst / "README.md").write_text(text, encoding="utf-8")
 
@@ -643,7 +637,6 @@ def build_package(spec: dict[str, object]) -> tuple[Path, Path, Path, Path]:
         WRITING / "data_code_availability_statements_v1.md",
         WRITING / "figure_table_captions.md",
         WRITING / "cover_letter_bmc_v1.md",
-        WRITING / "cover_letter_archives_v1.md",
         PROJECT_ROOT / "data_processed" / "analysis_ready" / "national_summary_panel.csv",
         OUTPUT_MAIN / "breakpoint_series_summary_1990_2021.csv",
         OUTPUT_MAIN / "breakpoint_segments_1990_2021.csv",
