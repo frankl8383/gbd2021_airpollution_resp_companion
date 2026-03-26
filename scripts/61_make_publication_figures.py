@@ -33,6 +33,7 @@ PANEL_TITLE_SIZE = 10.5
 AXIS_LABEL_SIZE = 9.5
 TICK_LABEL_SIZE = 8.8
 LEGEND_FONT_SIZE = 9
+FIGURE_FONT_STACK = ["Arial", "Liberation Sans", "Nimbus Sans", "DejaVu Sans"]
 
 
 def add_box(ax, x, y, w, h, text, fontsize=10):
@@ -70,7 +71,7 @@ def make_figure1() -> None:
     add_box(ax, x3, y1, w, h, "Risk-cause pairs:\nPM2.5 -> COPD\nPM2.5 -> LRI\nOzone -> COPD", fontsize=10)
 
     add_box(ax, x1, y2, w, h, "Input layers:\nBaseline ASR/ASDR tables\nAttributable + total age-sex burden\nPopulation by age and sex", fontsize=10)
-    add_box(ax, x2, y2, w, h, "Temporal module:\nData-driven breakpoint analysis\n1990-2021 main window\n1990-2019 sensitivity", fontsize=10)
+    add_box(ax, x2, y2, w, h, "Temporal module:\nPrespecified constrained\nbreakpoint comparison\n1990-2021 main window\n1990-2019 sensitivity", fontsize=10)
     add_box(ax, x3, y2, w, h, "Count interpretation:\nFour-factor accounting decomposition\nPopulation growth\nAging\nUnderlying rate + PAF", fontsize=10)
 
     add_box(ax, x1, y3, w, h, "Vulnerability module:\nUnder-5 focus for PM2.5-LRI\nAge-70-plus focus for COPD\nBoth/Female/Male", fontsize=10)
@@ -261,7 +262,8 @@ def make_figure4() -> None:
 
 
 def main() -> int:
-    plt.rcParams["font.family"] = "DejaVu Sans"
+    plt.rcParams["font.family"] = "sans-serif"
+    plt.rcParams["font.sans-serif"] = FIGURE_FONT_STACK
     plt.rcParams["axes.spines.top"] = False
     plt.rcParams["axes.spines.right"] = False
     plt.rcParams["axes.titleweight"] = "bold"
