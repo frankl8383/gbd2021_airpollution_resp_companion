@@ -18,8 +18,13 @@ submission-facing assets from the included current inputs.
 
 ## Recommended Release Assets
 
-The matched frozen artifacts for the current submission state are distributed as
-GitHub release assets and archived on Zenodo:
+The current journal-facing freeze uses a later local package pair
+(`BMC_submission_package_v17.zip` and `BMC_reproducibility_bundle_v15.zip`),
+while the latest public archival record is the Zenodo-mirrored GitHub release
+listed below.
+
+The matched public archival artifacts are distributed as GitHub release assets
+and archived on Zenodo:
 
 - `BMC_submission_package_v16.zip`
 - `BMC_reproducibility_bundle_v14.zip`
