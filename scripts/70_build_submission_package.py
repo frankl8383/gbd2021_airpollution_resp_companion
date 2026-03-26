@@ -631,8 +631,8 @@ It is not a full raw-data or full analysis-pipeline rerun archive. Raw IHME down
 - Operating system: Linux (validated on an Ubuntu-compatible server)
 - Programming language: Python 3
 - Other requirements: standard scientific Python environment with `pandas`, `matplotlib`, and `python-docx`
-- License: custom manuscript-companion use notice included in the bundle-root `LICENSE` file
-- Restrictions for non-academic use: commercial reuse requires written permission from the authors; source-data reuse remains subject to IHME terms
+- License: Creative Commons Attribution 4.0 International (CC BY 4.0) as stated in the bundle-root `LICENSE` file
+- Restrictions for non-academic use: none beyond attribution for the manuscript-companion materials; source-data reuse remains subject to IHME terms
 
 ## Rebuild Entry Point
 

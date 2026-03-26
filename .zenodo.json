@@ -1,0 +1,23 @@
+{
+  "title": "East Asia Respiratory Burden Manuscript Companion",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "air pollution",
+    "Global Burden of Disease",
+    "East Asia",
+    "respiratory burden"
+  ],
+  "creators": [
+    {
+      "name": "Liu, Zihao",
+      "type": "Researcher"
+    },
+    {
+      "name": "Li, Bing",
+      "type": "Researcher"
+    }
+  ],
+  "description": "Public manuscript-companion repository containing the breakpoint-ready summary input, manuscript-facing tables and figures, QC outputs, and build scripts for the East Asia air pollution-attributable respiratory burden submission package."
+}
