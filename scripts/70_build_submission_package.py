@@ -420,9 +420,42 @@ def write_additional_files_manifest(dst: Path, repro_bundle_name: str) -> None:
 - Additional file 7: `four_factor_decomposition_sensitivity_both.csv` (CSV). Both-sex four-factor decomposition rerun for the `1990–2019` window.
 - Additional file 8: `vulnerability_focus_long.csv` (CSV). Long-format vulnerability summary for under-5 and age-70-plus burden shares.
 - Additional file 9: `vulnerability_peak_age_long.csv` (CSV). Long-format peak-age vulnerability output.
-- Additional file 10: `{repro_bundle_name}` (ZIP). Audit and manuscript-packaging bundle containing the current source files, analysis-ready inputs, output tables, QC logs, and scripts required to rebuild the manuscript-facing tables, figures, and submission package.
+- Additional file 10: `{repro_bundle_name}` (ZIP). Audit and manuscript-packaging bundle containing the current source files, breakpoint-ready summary input, manuscript-facing output tables and figures, QC logs, a run-status manifest, and scripts required to rerun breakpoint analyses and rebuild the manuscript-facing tables, figures, and submission package. Complete harmonization, four-factor decomposition, and vulnerability reruns require upstream inputs that are not redistributed in the journal bundle.
 """
     (dst / "ADDITIONAL_FILES_UPLOAD_MAP.md").write_text(text, encoding="utf-8")
+
+
+def write_repro_bundle_run_status(dst: Path) -> None:
+    text = """# Run Status
+
+This manifest distinguishes between scripts that can be rerun directly from the bundled inputs and scripts retained mainly for audit of the manuscript workflow.
+
+## Directly Rerunnable From Bundled Inputs
+
+- `scripts/30_breakpoint_trends.py`
+- `scripts/60_make_publication_tables.py`
+- `scripts/61_make_publication_figures.py`
+- `scripts/70_build_submission_package.py`
+
+## Retained For Audit, But Not Fully Rerunnable From Bundled Inputs Alone
+
+- `scripts/20_harmonize_national_gbd.py`
+- `scripts/21_prepare_four_factor_inputs.py`
+- `scripts/41_decompose_national_burden_four_factor.py`
+- `scripts/50_profile_vulnerability.py`
+
+These scripts require upstream raw or intermediate inputs that are not redistributed in the journal bundle. The bundled files are intended to support breakpoint rerun plus manuscript-facing table, figure, and submission-package regeneration.
+
+## Internal Output To Manuscript Mapping
+
+- `outputs/main/table2_breakpoint_main.csv` -> manuscript Table 1
+- `outputs/main/table3_decomposition_main.csv` -> manuscript Table 2
+
+## Rebuild Label Note
+
+In a clean unzip environment, regenerated package labels restart from `v1/current`. These regenerated labels are non-archival convenience outputs. The archived peer-review snapshot is the frozen package pair distributed with this release.
+"""
+    (dst / "RUN_STATUS.md").write_text(text, encoding="utf-8")
 
 
 def build_upload_bundle(
@@ -500,6 +533,7 @@ def build_current_repro_bundle(
         copy_relative_file(src, current_repro_dir)
 
     write_repro_bundle_readme(current_repro_dir, bundle_name, current=current)
+    write_repro_bundle_run_status(current_repro_dir)
 
 
 def write_upload_package_readme(
@@ -570,19 +604,21 @@ def write_repro_bundle_readme(dst: Path, bundle_name: str, *, current: bool) -> 
     if current:
         summary_line = (
             "This bundle is the canonical current manuscript-packaging bundle. It preserves the "
-            "original project tree for the files needed to rebuild the manuscript-facing tables, "
-            "figures, and submission package from the included current inputs."
+            "original project tree for the files needed to audit the submitted package and "
+            "regenerate manuscript-facing tables, figures, and the submission package from the "
+            "bundled audit inputs."
         )
     else:
         summary_line = (
-            "This bundle preserves the original project tree for the files needed to rebuild the "
-            "manuscript-facing tables, figures, and submission package from the included current inputs."
+            "This bundle preserves the original project tree for the files needed to audit the "
+            "submitted package and regenerate manuscript-facing tables, figures, and the "
+            "submission package from the bundled audit inputs."
         )
     text = f"""# Reproducibility Bundle {version_label}
 
 {summary_line}
 
-It is not a full raw-data rerun archive. Raw IHME downloads are not redistributed. The included files are sufficient for manuscript-facing package regeneration and figure/table rebuilding from the current analysis-ready inputs bundled here.
+It is not a full raw-data or full analysis-pipeline rerun archive. Raw IHME downloads are not redistributed. The bundled files are sufficient for breakpoint rerun and for manuscript-facing package regeneration, including figure/table rebuilding. Complete harmonization, four-factor decomposition, and vulnerability reruns require upstream raw or intermediate inputs that are not redistributed here.
 
 ## Software Metadata
 
@@ -600,7 +636,8 @@ It is not a full raw-data rerun archive. Raw IHME downloads are not redistribute
 - Main package builder: `python3 scripts/70_build_submission_package.py`
 - Expected output root: `submission_packages/`
 - The builder creates `submission_packages/` automatically if it does not already exist
-- In a clean unzip environment, regenerated package labels restart from `v1/current`; the archived peer-review snapshot remains the frozen package pair distributed with this release
+- In a clean unzip environment, regenerated package labels restart from `v1/current`; these regenerated labels are non-archival convenience outputs, while the archived peer-review snapshot remains the frozen package pair distributed with this release
+- Script-by-script run scope and internal table-to-manuscript mapping are documented in `RUN_STATUS.md`
 
 ## Scope Note
 

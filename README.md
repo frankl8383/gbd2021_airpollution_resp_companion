@@ -4,14 +4,15 @@ This public repository is the manuscript-companion mirror for the East Asia
 air pollution-attributable respiratory burden study prepared for journal
 submission in March 2026.
 
-It preserves the source files, analysis-ready inputs, manuscript-facing tables,
- figures, QC outputs, and build scripts needed to audit and rebuild the
-submission-facing assets from the included current inputs.
+It preserves the source files, breakpoint-ready summary input,
+manuscript-facing tables, figures, QC outputs, and build scripts needed to
+audit the submitted package and regenerate manuscript-facing assets from the
+bundled audit inputs.
 
 ## Scope
 
 - Journal-facing route: `BMC Public Health`
-- This repository is not a full raw-data rerun archive.
+- This repository is not a full raw-data or full analysis-pipeline rerun archive.
 - Raw IHME/GBD downloads are not redistributed.
 
 ## Recommended Release Assets
@@ -20,13 +21,15 @@ The current journal-facing freeze uses the package pair listed below. The same
 freeze is distributed as GitHub release assets and archived through the linked
 Zenodo concept record:
 
-- `BMC_submission_package_v22.zip`
-- `BMC_reproducibility_bundle_v20.zip`
+- `BMC_submission_package_v23.zip`
+- `BMC_reproducibility_bundle_v21.zip`
 - Releases page: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases`
 - Archived Zenodo concept DOI: `https://doi.org/10.5281/zenodo.19222088`
 
 The same manuscript-companion content is also preserved directly in this public
-repository tree for audit and rebuild purposes.
+repository tree for audit and manuscript-facing regeneration. Complete
+harmonization, four-factor decomposition, and vulnerability reruns require
+upstream raw or intermediate inputs that are not redistributed here.
 
 ## Rebuild Entry Point
 
@@ -35,8 +38,12 @@ repository tree for audit and rebuild purposes.
 - The builder creates `submission_packages/` automatically if it does not
   already exist
 - In a clean unzip environment, regenerated package labels restart from
-  `v1/current`; the archived peer-review snapshot remains the frozen package
-  pair listed above
+  `v1/current`; these regenerated labels are non-archival convenience outputs,
+  while the archived peer-review snapshot remains the frozen package pair
+  listed above
+
+See `RUN_STATUS.md` in the bundled reproducibility archive for script-by-script
+run scope and internal table-to-manuscript mapping.
 
 ## Software Metadata
 
