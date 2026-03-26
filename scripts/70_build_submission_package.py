@@ -600,6 +600,7 @@ It is not a full raw-data rerun archive. Raw IHME downloads are not redistribute
 - Main package builder: `python3 scripts/70_build_submission_package.py`
 - Expected output root: `submission_packages/`
 - The builder creates `submission_packages/` automatically if it does not already exist
+- In a clean unzip environment, regenerated package labels restart from `v1/current`; the archived peer-review snapshot remains the frozen package pair distributed with this release
 
 ## Scope Note
 

@@ -8,7 +8,7 @@ This figure summarizes the study design based on GBD 2021 risk-attributable burd
 ## Figure 2
 
 **Figure 2. Age-standardized respiratory burden trends and breakpoint years across comparison locations.**
-Panels display deaths ASR and DALYs ASDR for PM2.5-attributable COPD, PM2.5-attributable lower respiratory infections, and ozone-attributable COPD in China, Japan, Republic of Korea, East Asia, Global, and High SDI. Breakpoint years shown in panel annotations are derived from the data-driven log-linear breakpoint search and summarized formally in Table 1.
+Panels display deaths ASR and DALYs ASDR for PM2.5-attributable COPD, PM2.5-attributable lower respiratory infections, and ozone-attributable COPD in China, Japan, Republic of Korea, East Asia, Global, and High SDI. Breakpoint years shown in panel annotations are derived from the prespecified constrained log-linear breakpoint comparison and summarized formally in Table 1.
 
 ## Figure 3
 
@@ -22,10 +22,10 @@ Panels compare the burden share carried by key vulnerable age groups. For PM2.5-
 
 ## Table 1
 
-**Table 1. Data-driven breakpoint and segmented annual percentage change summary for respiratory burden trends, 1990–2021.**
+**Table 1. Prespecified constrained breakpoint comparison and segmented annual percentage change summary for respiratory burden trends, 1990–2021.**
 For each risk-outcome pair and comparison location, the table reports the selected breakpoint year, the two segmented APC estimates with 95% confidence intervals, and the overall AAPC for the full 1990–2021 period. The table replaces the earlier fixed-year segmentation strategy.
 
 ## Table 2
 
 **Table 2. Four-factor accounting decomposition of burden count change from 1990 to 2021.**
-For each risk-outcome pair, measure, and location, the table reports the both-sex main-analysis net change in burden counts and the contributions attributable to population growth, aging, underlying total disease rate change, and population attributable fraction (PAF) change. Additional file 3, Additional file 4, Additional file 5, Additional file 6, and Additional file 7 provide the sex-stratified, capped-PAF, annual-chain, common-age-set, and `1990–2019` sensitivity versions of the same accounting decomposition.
+For each risk-outcome pair, measure, and location, the table reports the both-sex main-analysis net change in burden counts and the contributions attributable to population growth, aging, underlying total disease rate change, and population attributable fraction (PAF) change. Additional file 3 through Additional file 7 provide the sex-stratified and sensitivity variants of the same accounting decomposition.
