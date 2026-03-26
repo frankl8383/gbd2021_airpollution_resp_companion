@@ -432,6 +432,7 @@ This manifest distinguishes between scripts that can be rerun directly from the 
 
 ## Directly Rerunnable From Bundled Inputs
 
+- `scripts/00_validate_gbd_downloads.py`
 - `scripts/30_breakpoint_trends.py`
 - `scripts/60_make_publication_tables.py`
 - `scripts/61_make_publication_figures.py`
@@ -443,6 +444,8 @@ This manifest distinguishes between scripts that can be rerun directly from the 
 - `scripts/21_prepare_four_factor_inputs.py`
 - `scripts/41_decompose_national_burden_four_factor.py`
 - `scripts/50_profile_vulnerability.py`
+
+`scripts/00_validate_gbd_downloads.py` is included as an audit/validation helper; in the distributed bundle it is expected to report missing upstream raw-download files rather than a fully satisfied raw-data environment.
 
 These scripts require upstream raw or intermediate inputs that are not redistributed in the journal bundle. The bundled files are intended to support breakpoint rerun plus manuscript-facing table, figure, and submission-package regeneration.
 

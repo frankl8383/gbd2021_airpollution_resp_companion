@@ -176,6 +176,7 @@ East Asia’s air pollution-attributable respiratory burden cannot be adequately
 
 - `AAPC`: average annual percentage change
 - `APC`: annual percentage change
+- `CI`: confidence interval
 - `ASDR`: age-standardized DALY rate
 - `ASR`: age-standardized death rate
 - `COPD`: chronic obstructive pulmonary disease

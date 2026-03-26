@@ -21,9 +21,10 @@ The current journal-facing freeze uses the package pair listed below. The same
 freeze is distributed as GitHub release assets and archived through the linked
 Zenodo concept record:
 
-- `BMC_submission_package_v23.zip`
-- `BMC_reproducibility_bundle_v21.zip`
+- `BMC_submission_package_v24.zip`
+- `BMC_reproducibility_bundle_v22.zip`
 - Releases page: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases`
+- Current frozen release: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases/tag/bmc-v24`
 - Archived Zenodo concept DOI: `https://doi.org/10.5281/zenodo.19222088`
 
 The same manuscript-companion content is also preserved directly in this public
