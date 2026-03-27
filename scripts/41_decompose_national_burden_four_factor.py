@@ -40,6 +40,23 @@ OUTPUT_SUPP = PROJECT_ROOT / "outputs" / "supp"
 LOG_DIR = PROJECT_ROOT / "logs"
 
 
+def _format_missing_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
+
+
+def audit_only_exit(missing_paths: list[Path]) -> int:
+    details = "\n".join(f"- {_format_missing_path(path)}" for path in missing_paths)
+    raise SystemExit(
+        "AUDIT NOTE: scripts/41_decompose_national_burden_four_factor.py is retained for "
+        "workflow audit in the distributed journal bundle. Complete rerun requires upstream "
+        "analysis-ready decomposition inputs that are not redistributed here.\nMissing required "
+        f"inputs:\n{details}"
+    )
+
+
 def read_rows(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
@@ -497,6 +514,11 @@ def build_qc(
 
 
 def main() -> int:
+    required_inputs = [FOUR_FACTOR_INPUT, BP_MAIN, BP_SENS]
+    missing_inputs = [path for path in required_inputs if not path.exists()]
+    if missing_inputs:
+        return audit_only_exit(missing_inputs)
+
     input_rows = read_rows(FOUR_FACTOR_INPUT)
     bp_main = load_breakpoint_lookup(BP_MAIN)
     bp_sens = load_breakpoint_lookup(BP_SENS)

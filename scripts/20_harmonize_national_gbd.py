@@ -73,6 +73,22 @@ LOCATION_MAP = {
 }
 
 
+def _format_missing_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
+
+
+def audit_only_exit(message: str, missing_items: list[str]) -> int:
+    details = "\n".join(f"- {item}" for item in missing_items)
+    raise SystemExit(
+        "AUDIT NOTE: scripts/20_harmonize_national_gbd.py is retained for workflow audit in the "
+        "distributed journal bundle. Complete rerun requires upstream raw GBD inputs that are "
+        f"not redistributed here.\n{message}\nMissing required inputs:\n{details}"
+    )
+
+
 def read_rows(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
@@ -470,17 +486,38 @@ def build_qc_summary(
 
 
 def main() -> int:
+    missing_items = [
+        _format_missing_path(DATA_RAW / filename)
+        for filename in LEGACY_BASELINE_FILES
+        if not (DATA_RAW / filename).exists()
+    ]
+    age_sex_files = discover_age_sex_burden_files()
+    if not age_sex_files:
+        missing_items.append(
+            "data_raw/gbd_downloads/national/gbd2021_*_number_age-specific_mf_1990_2021.csv"
+        )
+    population_files = discover_population_files()
+    if not population_files:
+        missing_items.append(
+            "data_raw/gbd_downloads/national/gbd2021_*population_number_age-specific_mf_1990_2021.csv"
+        )
+    if missing_items:
+        return audit_only_exit(
+            "The harmonization step cannot run from the bundled audit inputs alone.",
+            missing_items,
+        )
+
     ANALYSIS_READY.mkdir(parents=True, exist_ok=True)
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
     burden_rows: list[dict[str, object]] = []
     for filename in LEGACY_BASELINE_FILES:
         burden_rows.extend(normalize_burden_rows(DATA_RAW / filename, "legacy_baseline"))
-    for path in discover_age_sex_burden_files():
+    for path in age_sex_files:
         burden_rows.extend(normalize_burden_rows(path, "age_sex_count"))
 
     population_rows: list[dict[str, object]] = []
-    for path in discover_population_files():
+    for path in population_files:
         population_rows.extend(normalize_population_rows(path))
 
     burden_rows = sort_long_rows(burden_rows)
