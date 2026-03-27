@@ -611,11 +611,20 @@ def write_repro_bundle_readme(dst: Path, bundle_name: str, *, current: bool) -> 
             "audit the submitted package and regenerate manuscript-facing tables, figures, and "
             "the submission package from the bundled audit inputs."
         )
+        archived_version_line = (
+            f"- Archived version: Zenodo concept DOI `{ZENODO_DOI}`; the archived peer-review "
+            "snapshot is the frozen versioned package pair generated alongside this convenience "
+            "output"
+        )
     else:
         summary_line = (
             "This bundle preserves the original project tree for the files needed to audit the "
             "submitted package and regenerate manuscript-facing tables, figures, and the "
             "submission package from the bundled audit inputs."
+        )
+        archived_version_line = (
+            f"- Archived version: Zenodo concept DOI `{ZENODO_DOI}` and journal-hosted "
+            f"`{bundle_name}.zip`"
         )
     text = f"""# Reproducibility Bundle {version_label}
 
@@ -627,7 +636,7 @@ It is not a full raw-data or full analysis-pipeline rerun archive. Raw IHME down
 
 - Project name: East Asia respiratory burden manuscript package
 - Project home page: `{PUBLIC_COMPANION_URL}`
-- Archived version: Zenodo concept DOI `{ZENODO_DOI}` and journal-hosted `{bundle_name}.zip`
+{archived_version_line}
 - Operating system: Linux (validated on an Ubuntu-compatible server)
 - Programming language: Python 3
 - Other requirements: standard scientific Python environment with `pandas`, `matplotlib`, and `python-docx`
