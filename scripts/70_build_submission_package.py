@@ -527,6 +527,7 @@ def build_current_repro_bundle(
     bundle_name: str,
     *,
     current: bool,
+    public_release_tag: str,
 ) -> None:
     if current_repro_dir.exists():
         shutil.rmtree(current_repro_dir)
@@ -535,7 +536,12 @@ def build_current_repro_bundle(
     for src in repro_sources:
         copy_relative_file(src, current_repro_dir)
 
-    write_repro_bundle_readme(current_repro_dir, bundle_name, current=current)
+    write_repro_bundle_readme(
+        current_repro_dir,
+        bundle_name,
+        current=current,
+        public_release_tag=public_release_tag,
+    )
     write_repro_bundle_run_status(current_repro_dir)
 
 
@@ -602,7 +608,13 @@ Do not upload the local helper file below; it is included only to prevent number
     (dst / "README.md").write_text(text, encoding="utf-8")
 
 
-def write_repro_bundle_readme(dst: Path, bundle_name: str, *, current: bool) -> None:
+def write_repro_bundle_readme(
+    dst: Path,
+    bundle_name: str,
+    *,
+    current: bool,
+    public_release_tag: str,
+) -> None:
     version_label = bundle_name.rsplit("_", 1)[-1]
     if current:
         summary_line = (
@@ -636,6 +648,7 @@ It is not a full raw-data or full analysis-pipeline rerun archive. Raw IHME down
 
 - Project name: East Asia respiratory burden manuscript package
 - Project home page: `{PUBLIC_COMPANION_URL}`
+- Current frozen public release: `{PUBLIC_COMPANION_URL}/releases/tag/{public_release_tag}`
 {archive_metadata_block}
 - Operating system: Linux (validated on an Ubuntu-compatible server)
 - Programming language: Python 3
@@ -727,10 +740,22 @@ def build_package(spec: dict[str, object]) -> tuple[Path, Path, Path, Path]:
         PROJECT_ROOT / "scripts" / "70_build_submission_package.py",
     ]
 
-    build_current_repro_bundle(repro_sources, repro_dir, repro_name, current=False)
+    build_current_repro_bundle(
+        repro_sources,
+        repro_dir,
+        repro_name,
+        current=False,
+        public_release_tag=upload_name.replace("BMC_submission_package_", "bmc-"),
+    )
     zip_directory(repro_dir, repro_zip_path)
 
-    build_current_repro_bundle(repro_sources, current_repro_dir, current_repro_name, current=True)
+    build_current_repro_bundle(
+        repro_sources,
+        current_repro_dir,
+        current_repro_name,
+        current=True,
+        public_release_tag=upload_name.replace("BMC_submission_package_", "bmc-"),
+    )
     zip_directory(current_repro_dir, current_repro_zip_path)
 
     build_upload_bundle(package_dir, upload_name, journal_name, cover_letter_source, repro_zip_path)
