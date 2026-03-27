@@ -416,7 +416,7 @@ def write_additional_files_manifest(dst: Path, repro_bundle_name: str) -> None:
 - Additional file 3: `four_factor_decomposition_all_periods_by_sex.csv` (CSV). Sex-stratified four-factor decomposition output for the main and sensitivity windows, including the full, pre-break, and post-break analysis intervals.
 - Additional file 4: `four_factor_decomposition_capped_paf_both.csv` (CSV). Both-sex four-factor decomposition rerun using capped implied PAF values.
 - Additional file 5: `four_factor_decomposition_annual_chain_both.csv` (CSV). Both-sex four-factor decomposition rerun using annual-chain accumulation.
-- Additional file 6: `four_factor_decomposition_common_age_set_both.csv` (CSV). Both-sex COPD-death decomposition rerun excluding structurally empty `<15` cells.
+- Additional file 6: `four_factor_decomposition_common_age_set_both.csv` (CSV). Full both-sex four-factor decomposition rerun table on the common age set, with substantive differences confined to COPD deaths after excluding structurally empty `<15` cells.
 - Additional file 7: `four_factor_decomposition_sensitivity_both.csv` (CSV). Both-sex four-factor decomposition rerun for the `1990–2019` window.
 - Additional file 8: `vulnerability_focus_long.csv` (CSV). Long-format vulnerability summary for under-5 and age-70-plus burden shares.
 - Additional file 9: `vulnerability_peak_age_long.csv` (CSV). Long-format peak-age vulnerability output.
@@ -550,8 +550,8 @@ def write_upload_package_readme(
     version_label = package_name.rsplit("_", 1)[-1]
     if version_label == "current":
         summary_line = (
-            "This package is the canonical current journal-upload bundle. "
-            "Rebuilding the submission package updates this directory in place."
+            "This package is a non-archival convenience output for the current journal-upload "
+            "bundle. Rebuilding the submission package updates this directory in place."
         )
     else:
         summary_line = (
@@ -606,10 +606,10 @@ def write_repro_bundle_readme(dst: Path, bundle_name: str, *, current: bool) -> 
     version_label = bundle_name.rsplit("_", 1)[-1]
     if current:
         summary_line = (
-            "This bundle is the canonical current manuscript-packaging bundle. It preserves the "
-            "original project tree for the files needed to audit the submitted package and "
-            "regenerate manuscript-facing tables, figures, and the submission package from the "
-            "bundled audit inputs."
+            "This bundle is a non-archival convenience output for the current manuscript-"
+            "packaging workflow. It preserves the original project tree for the files needed to "
+            "audit the submitted package and regenerate manuscript-facing tables, figures, and "
+            "the submission package from the bundled audit inputs."
         )
     else:
         summary_line = (

@@ -225,7 +225,7 @@ We acknowledge the Institute for Health Metrics and Evaluation and the Global Bu
 - Additional file 3. `four_factor_decomposition_all_periods_by_sex.csv` (CSV): sex-stratified four-factor decomposition output for the main and sensitivity windows, including the full, pre-break, and post-break analysis intervals.
 - Additional file 4. `four_factor_decomposition_capped_paf_both.csv` (CSV): both-sex four-factor decomposition rerun using capped implied PAF values.
 - Additional file 5. `four_factor_decomposition_annual_chain_both.csv` (CSV): both-sex four-factor decomposition rerun using annual-chain accumulation.
-- Additional file 6. `four_factor_decomposition_common_age_set_both.csv` (CSV): both-sex four-factor decomposition rerun for COPD deaths after excluding structurally empty `<15` cells.
+- Additional file 6. `four_factor_decomposition_common_age_set_both.csv` (CSV): full both-sex four-factor decomposition rerun table on the common age set, with substantive differences confined to COPD deaths after excluding structurally empty `<15` cells.
 - Additional file 7. `four_factor_decomposition_sensitivity_both.csv` (CSV): both-sex four-factor decomposition rerun for the `1990–2019` sensitivity window.
 - Additional file 8. `vulnerability_focus_long.csv` (CSV): long-format vulnerability summary file for pre-specified under-5 and age-70-plus burden shares.
 - Additional file 9. `vulnerability_peak_age_long.csv` (CSV): long-format peak-age vulnerability output.
