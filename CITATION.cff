@@ -2,7 +2,7 @@ cff-version: 1.2.0
 title: "East Asia Respiratory Burden Manuscript Companion"
 message: "If you use this manuscript-companion repository, please cite the archived GitHub or Zenodo release."
 type: software
-version: "bmc-v31"
+version: "bmc-v33"
 authors:
   - family-names: Liu
     given-names: Zihao

@@ -22,7 +22,7 @@ Panels compare the burden share carried by key vulnerable age groups. For PM2.5-
 
 ## Table 1
 
-**Table 1. Prespecified constrained breakpoint comparison and segmented annual percentage change summary for respiratory burden trends, 1990–2021.**
+**Table 1. Prespecified constrained breakpoint comparison and segmented APC summary for respiratory burden trends, 1990–2021.**
 For each risk-outcome pair and comparison location, the table reports the selected breakpoint year, the two segmented APC estimates with 95% confidence intervals, and the overall AAPC for the full 1990–2021 period. The table replaces the earlier fixed-year segmentation strategy.
 
 ## Table 2
