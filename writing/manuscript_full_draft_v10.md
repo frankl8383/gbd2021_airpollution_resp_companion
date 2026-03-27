@@ -243,4 +243,4 @@ We acknowledge the Institute for Health Metrics and Evaluation and the Global Bu
 8. GBD 2021 Lower Respiratory Infections and Antimicrobial Resistance Collaborators. Global, regional, and national incidence and mortality burden of non-COVID-19 lower respiratory infections and aetiologies, 1990-2021: a systematic analysis from the Global Burden of Disease Study 2021. Lancet Infect Dis. 2024;24(9):974-1002.
 9. Institute for Health Metrics and Evaluation. Global Burden of Disease Study 2021 (GBD 2021) Results Tool. https://vizhub.healthdata.org/gbd-results/. Accessed 25 Mar 2026.
 10. Liu Z, Li B. East Asia respiratory burden manuscript companion. GitHub. 2026. https://github.com/frankl8383/gbd2021_airpollution_resp_companion. Accessed 26 Mar 2026.
-11. Liu Z, Li B. East Asia respiratory burden manuscript companion. Zenodo. 2026. doi:10.5281/zenodo.19222088.
+11. Liu Z, Li B. East Asia respiratory burden manuscript companion. Zenodo. 2026. https://doi.org/10.5281/zenodo.19222088.

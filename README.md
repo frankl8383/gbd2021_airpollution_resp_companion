@@ -4,6 +4,12 @@ This public repository is the manuscript-companion mirror for the East Asia
 air pollution-attributable respiratory burden study prepared for journal
 submission in March 2026.
 
+Current public freeze:
+- `BMC_submission_package_v26.zip`
+- `BMC_reproducibility_bundle_v24.zip`
+- Latest public release: `bmc-v26`
+- License for manuscript-companion materials: `CC BY 4.0`
+
 It preserves the source files, breakpoint-ready summary input,
 manuscript-facing tables, figures, QC outputs, and build scripts needed to
 audit the submitted package and regenerate manuscript-facing assets from the
@@ -21,10 +27,10 @@ The current journal-facing freeze uses the package pair listed below. The same
 freeze is distributed as GitHub release assets, while the linked Zenodo
 concept DOI serves as the stable archive-family entry for the public record:
 
-- `BMC_submission_package_v25.zip`
-- `BMC_reproducibility_bundle_v23.zip`
+- `BMC_submission_package_v26.zip`
+- `BMC_reproducibility_bundle_v24.zip`
 - Releases page: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases`
-- Current frozen release: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases/tag/bmc-v25`
+- Current frozen release: `https://github.com/frankl8383/gbd2021_airpollution_resp_companion/releases/tag/bmc-v26`
 - Archived Zenodo concept DOI: `https://doi.org/10.5281/zenodo.19222088`
 
 The same manuscript-companion content is also preserved directly in this public
